@@ -1,11 +1,10 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth.forms import AuthenticationForm
 from contact.forms import RegisterForm
 from django.contrib import auth, messages
 
 def register(request):
     form = RegisterForm()
-
-    messages.info(request, "Teste")
 
     if request.method == 'POST':
         form = RegisterForm(request.POST)
